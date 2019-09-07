@@ -6,8 +6,15 @@ import store from './store'//rem组件和样式重置组件想在首页App.vue�
 Vue.config.productionTip = false
 //import '@/assets/css/rest.css'
 
-new Vue({
+//vant的完全引 入
+//import Vant from 'vant';
+//import 'vant/lib/index.css';
+// Vue.use(Vant);
+import {Button,NavBar,Icon} from 'vant'
+Vue.use(Button).use(NavBar).use(Icon)
+
+new Vue({//下面就是把组件挂载到id=app上
   router,
   store,
-  render: h => h(App)
+  render: h => h(App) 
 }).$mount('#app')
