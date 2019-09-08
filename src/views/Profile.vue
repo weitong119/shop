@@ -1,6 +1,6 @@
 <template>
-    <div>我的
-        <van-button type="primary">主要按钮</van-button>
+    <div>
+    我的
     </div>
 </template>
 <script>

@@ -1,12 +1,23 @@
 <template>
   <div id="app">
     <router-view></router-view> 
-    <ul class="footer-bar">
+    <van-tabbar v-model="active"><!--通过v-model实现双向数据绑定，active是自定义的名字（代指）当下边的数据data变化了，会影响上边的这个v-model，反之也是如此所以叫双向数据绑定，这种事交互问题所以写在js里  -->
+    <van-tabbar-item icon="home-o" to="/"><!--标签栏有个to属性，跟router-link里的to功能是一样的，想要加点击导航两者都可以 -->
+           首页
+      </van-tabbar-item><!--这个标签栏得在main.js引入之后才能使用，里边的icon是图标的意思，英文写什么就会在内容上边显示什么图标，下边也一样 -->
+    <van-tabbar-item icon="records" to="/category"><!--标签栏有个to属性，跟router-link里的to功能是一样的，想要加点击导航两者都可以 -->
+    分类
+      </van-tabbar-item><!--icon用什么上Vant网站Icon去搜 -->
+    <van-tabbar-item icon="cart" to="/cart">购物车</van-tabbar-item>
+    <van-tabbar-item icon="contact" to="/profile">我的</van-tabbar-item>
+        
+    </van-tabbar>
+   <!-- <ul class="footer-bar">
       <li class="footer-bar-item">
-        <router-link to="/home">首页</router-link><!--意思为点击“首页”后切换到路径为/home所设置的组件上（router.js里设置的），to="路径"-->
+        <router-link to="/">首页</router-link>意思为点击“首页”后切换到路径为/home所设置的组件上（router.js里设置的），to="路径"
         </li>
       <li class="footer-bar-item">
-         <router-link to="/category">分类</router-link><!--//也可以说成点击分类把地址栏里加入了/category，找到了路由,之后进行了（router.js里的操作）-->
+         <router-link to="/category">分类</router-link>//也可以说成点击分类把地址栏里加入了/category，找到了路由,之后进行了（router.js里的操作）
       </li>
       <li  class="footer-bar-item">
         <router-link to="/cart">购物车</router-link>
@@ -14,12 +25,23 @@
       <li  class="footer-bar-item">
         <router-link to="/profile">我的 </router-link>
         </li>
-    </ul>
+    </ul>-->
  
 
   </div>
+  
    
 </template>
+<script>
+export default {
+  data(){//在v-model里加的
+    return{
+      active:0//索引从零开始
+    }
+  }
+}
+</script>
+
 
 <style lang="scss">
 .footer-bar{

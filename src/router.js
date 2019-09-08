@@ -10,7 +10,7 @@ Vue.use(Router)
 export default new Router({
   routes: [//它是一个导航，是个数组[]数组中可以写着导航用的对象
     {
-      path: '/home',//以，逗号结尾，意思为当地址栏中输入#/home这个路径时会导航到views下的组件Home.vue中，并因为<router-view>在App.vue中的html占位了，所以可以显示在页面中
+      path: '/',//以，逗号结尾，意思为当地址栏中输入#/这个路径时会导航到views下的组件Home.vue中，并因为<router-view>在App.vue中的html占位了，所以可以显示在页面中
 
       name: 'home',
       component: Home//这里导航到哪个组件的意思(Home为上面你给Home.vue这个文件起的名字)（如果想引用组件，就要像上面先导入这个组件）
